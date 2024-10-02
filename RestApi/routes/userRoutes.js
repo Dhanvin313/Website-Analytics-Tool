@@ -7,6 +7,9 @@ const router = express.Router();
 // Route for user registration
 router.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
+  console.log(username);
+  console.log(email);
+  console.log(password);
   const newUser = new User({ username, email, password });
 
   await newUser.save();
