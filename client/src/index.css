@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.MainWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #9fdfda;
+  border-radius: 5px;
+  box-shadow: 1px 1px 19px 1px;
+}
+
+.MainWrapper h1 {
+  font-size: 32px;
+}
+
+.MainWrapper p {
+  font-size: 24px;
+  width: 30%;
+  text-align: center;
+}
+
+.MainWrapper nav ul {
+  list-style-type: none;
+  display: flex;
+  column-gap: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  column-gap: 10px;
+  font-size: 22px;
+}
+
+.outregform {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #91919136;
+}
+
+.registrationformouter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.registrationformouter {
+  padding: 20px;
+  background-color: #9fdfda;
+  border-radius: 5px;
+  box-shadow: 1px 1px 19px 1px;
+}
+
+.registrationformouter form div {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.registrationformouter form div input {
+  border-radius: 3px;
+  padding: 1px;
+  border: 0.5px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.registrationformouter form button {
+  padding: 5px 8px;
+  font-size: 16px;
+}
+
+.loginregfoot ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
