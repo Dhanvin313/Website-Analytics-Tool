@@ -33,18 +33,14 @@ export default function Dashboard() {
     
     return (
         <>
-            <div>Dashboard</div>
-        
-            <form className='registrationform'>
-                <div>
-                    <label>site url:</label>
-                    <input type="text" name="url" required />
+            <div className='outer-wrapper'>
+                <div className='inner-wrapper'>
+                    <div className='dashboard-title'>Dashboard</div>
+            
+                    <PageSpeedInsights></PageSpeedInsights>
+                    <button onClick={handleLogout} className='Logout-button'>Logout</button>
                 </div>
-                <button type="submit">Submit</button>
-            </form>
-
-            <PageSpeedInsights></PageSpeedInsights>
-            <button onClick={handleLogout}>Logout</button>
+            </div>
         </>
     )
 }

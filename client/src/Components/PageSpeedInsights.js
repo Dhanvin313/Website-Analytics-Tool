@@ -6,12 +6,13 @@ const PageSpeedInsights = () => {
   const [cruxMetrics, setCruxMetrics] = useState([]);
   const [lighthouseMetrics, setLighthouseMetrics] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // New loading state
 
   const setUpQuery = () => {
     const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
     const parameters = {
       url: url, // The API expects the URL unencoded in the query string
-      key: 'api key', // Replace with your actual API key if required
+      key: 'apikeyhere', // Replace with your actual API key if required
     };
     const query = new URL(api);
     Object.keys(parameters).forEach((key) =>
@@ -22,6 +23,7 @@ const PageSpeedInsights = () => {
 
   const runPageSpeed = async () => {
     const queryUrl = setUpQuery();
+    setLoading(true); // Set loading to true when request starts
     try {
       const response = await fetch(queryUrl);
       const json = await response.json();
@@ -75,6 +77,8 @@ const PageSpeedInsights = () => {
     } catch (err) {
       console.error('Error fetching PageSpeed Insights data:', err);
       setError('Error fetching PageSpeed Insights data. Please try again.');
+    } finally {
+        setLoading(false);
     }
   };
 
@@ -84,12 +88,12 @@ const PageSpeedInsights = () => {
   };
 
   return (
-    <div>
-      <h1>PageSpeed Insights API Demo</h1>
+    <div className='pagespeed'>
+      <h1>Website Performance</h1>
 
       <form onSubmit={handleSubmit}>
         <label>
-          Website URL:
+          Website URL: 
           <input
             type="url"
             value={url}
@@ -100,6 +104,19 @@ const PageSpeedInsights = () => {
         </label>
         <button type="submit">Check Performance</button>
       </form>
+
+        {loading && <div className="loader">
+                <svg viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="50"></circle>
+                </svg>
+                <svg viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="50"></circle>
+                </svg>
+                <svg viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="50"></circle>
+                </svg>
+            </div>
+        }
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 

@@ -43,8 +43,8 @@ const Register = () => {
 
   return (
     <>
-    <div className='outregform'>
-      <div className='registrationformouter'>
+    <div className='outer-wrapper'>
+      <div className='inner-wrapper'>
         <form onSubmit={handleSubmit} className='registrationform'>
           <div>
             <label>Name: </label>

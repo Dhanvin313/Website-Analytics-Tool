@@ -44,28 +44,28 @@ const Login = () => {
 
   return (
     <>
-    <div className='outregform'>
-    <div className='registrationformouter' >
-      <form onSubmit={handleSubmit} className='registrationform'>
-        <div>
-          <label>Email:</label>
-          <input type="email" name="email" value={loginData.email} onChange={handleChange} required />
+    <div className='outer-wrapper'>
+      <div className='inner-wrapper' >
+        <form onSubmit={handleSubmit} className='registrationform'>
+          <div>
+            <label>Email:</label>
+            <input type="email" name="email" value={loginData.email} onChange={handleChange} required />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input type="password" name="password" value={loginData.password} onChange={handleChange} required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div className='loginregfoot'>
+          <nav>
+            <ul>
+              <li><Link to="/register">New User? Register</Link></li>
+              <li><Link to="/"> Home</Link></li>
+            </ul>
+          </nav>
         </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="password" value={loginData.password} onChange={handleChange} required />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <div className='loginregfoot'>
-        <nav>
-          <ul>
-            <li><Link to="/register">New User? Register</Link></li>
-            <li><Link to="/"> Home</Link></li>
-          </ul>
-        </nav>
       </div>
-    </div>
     </div>
     </>
   );

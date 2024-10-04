@@ -44,6 +44,15 @@ nav ul {
   display: flex;
   column-gap: 10px;
   font-size: 22px;
+  justify-content: center;
+}
+
+nav ul li a{
+  transition: all ease-in-out 200ms;
+}
+
+nav ul li a:hover{
+  color: #8780b4;
 }
 
 .outregform {
@@ -95,4 +104,128 @@ nav ul {
   flex-direction: column;
   align-items: center;
   padding: 5px;
+  color: #ffffff;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.loader svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loader svg circle {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  animation: animate 2s linear infinite;
+}
+
+.loader svg:nth-child(1) circle {
+  filter: blur(10px);
+  stroke: #43acff;
+}
+
+.loader svg:nth-child(2) circle {
+  filter: blur(20px);
+  stroke: #43acff;
+}
+
+@keyframes animate {
+  0% {
+    stroke-dasharray: 295;
+    stroke-dashoffset: 295;
+  }
+  50% {
+    stroke-dasharray: 295;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 295;
+    stroke-dashoffset: -295;
+  }
+}
+
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1c1c1c;
+  min-height: 100vh;
+}
+
+.inner-wrapper {
+  background-color: #354856;
+  padding: 50px;
+  border-radius: 15px;
+  margin: 20px;
+  color: #ffffff;
+  box-shadow: 0px 0px 10px 4px #6dbcf4, 0px 0px 17px 6px #dbe9f3;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 28px;
+}
+
+.pagespeed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagespeed form, .registrationform {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  font-size: 14px;
+}
+
+.pagespeed form input, .registrationform input {
+  font-size: 14px;
+  margin: 10px;
+  padding: 5px;
+  background-color: #14354e;
+  border: none;
+  border-radius: 5px;
+  transition: all 500ms ease-in-out;
+  color: #ffffff;
+}
+
+.pagespeed form input:hover, .registrationform input:hover {
+  box-shadow: 0px 0px 2px 0px #6dbcf4, 0px 0px 10px 0px #dbe9f3;
+}
+
+.pagespeed form button, .Logout-button, .registrationform button{
+  align-self: center;
+  padding: 8px 12px;
+  background-color: #14354e;
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 0px #6dbcf4, 0px 0px 10px 0px #dbe9f3;
+}
+
+.Logout-button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.inner-wrapper h1, .inner-wrapper p{
+  text-align: center;
 }
