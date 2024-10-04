@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import PageSpeedInsights from './PageSpeedInsights';
 
 export default function Dashboard() {
 
@@ -41,6 +42,8 @@ export default function Dashboard() {
                 </div>
                 <button type="submit">Submit</button>
             </form>
+
+            <PageSpeedInsights></PageSpeedInsights>
             <button onClick={handleLogout}>Logout</button>
         </>
     )

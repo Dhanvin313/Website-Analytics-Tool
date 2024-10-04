@@ -33,9 +33,11 @@ const Login = () => {
         document.cookie = `username=${result.username}; path=/; max-age=3600`; // Cookie valid for 1 hour
         navigate('/dashboard');  // Redirect to dashboard after login
       } else {
+        alert("Login Failed");
         console.error("Login failed:", result);
       }
     } catch (error) {
+      alert("Opps!! Login Failed");
       console.error("Error:", error);
     }
   };

@@ -19,7 +19,7 @@ app.use(cors({
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodburl', {
+mongoose.connect('mongourl', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -31,7 +31,7 @@ app.use(session({
     secret: 'yourSecretKey', // Replace with a strong secret key
     resave: false,  // Prevents re-saving unchanged sessions
     saveUninitialized: false,  // Don't save empty sessions
-    store: MongoStore.create({ mongoUrl: 'mongodburl' }),  // Store sessions in MongoDB
+    store: MongoStore.create({ mongoUrl: 'mongourl' }),  // Store sessions in MongoDB
     cookie: { maxAge: 3600000  }  // Session cookie valid for 1 hour
 }));
 
